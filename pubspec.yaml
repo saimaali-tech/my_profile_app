@@ -1,0 +1,30 @@
+name: my_profile_app
+description: A simple Flutter personal profile app.
+
+environment:
+  sdk: '^3.9.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/profile.jpg
+    - assets/images/background.jpg
+    - assets/data/user.json
+
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
+
+

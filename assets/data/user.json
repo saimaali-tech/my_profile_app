@@ -1,0 +1,32 @@
+{
+  "name": "Saima Ali",
+  "profession": "DevOps Engineer",
+  "imagePath": "assets/images/profile.jpg",
+  "bio": "I’m a DevOps Engineer at Core Elite Experts, passionate about automating development workflows and bridging the gap between code and infrastructure. My focus lies in CI/CD pipelines, cloud deployment, and container orchestration, ensuring smooth and scalable delivery of modern applications. I enjoy optimizing systems, streamlining operations, and leveraging tools like Docker, Jenkins, and AWS to drive efficiency across the software lifecycle.",
+  "email": "saima.devops@example.com",
+  "phone": "+92-300-0000000",
+  "location": "Gilgit, Pakistan",
+  "linkedin": "https://linkedin.com/in/saima-ali",
+  "github": "https://github.com/saimaali",
+  "twitter": "https://twitter.com/saimaali",
+  "skills": [
+    "CI/CD (Jenkins, GitHub Actions)",
+    "Docker & Docker Compose",
+    "Kubernetes (Deployment & Orchestration)",
+    "AWS (EC2, S3)",
+    "Nginx, Linux Server Management",
+    "Git, GitHub",
+    "HTML, CSS, JavaScript",
+    "React, Tailwind CSS, Bootstrap",
+    "Node.js, Express.js",
+    "Python (Flask, Django)",
+    "SQL & NoSQL (MySQL, MongoDB)"
+  ],
+  "hobbies": [
+    "Exploring new DevOps tools",
+    "Learning cloud automation",
+    "Building personal web apps",
+    "Writing tech blogs",
+    "Watching tech talks"
+  ]
+}
