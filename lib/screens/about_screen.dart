@@ -7,13 +7,12 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final skills = user.skills;
-    final hobbies = user.hobbies;
+    final size = MediaQuery.of(context).size;
+    final isTablet = size.width > 600;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('About Me'),
-        leading: const BackButton(),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -21,37 +20,50 @@ class AboutScreen extends StatelessWidget {
           Card(
             child: ListTile(
               title: const Text('Education'),
-              subtitle: const Text(
-                  '🎓 Karakoram International University (BSCS 2023–2027)\n🎓 Degree College Gilgit (ICS 2021–2023)'),
+              subtitle: Text(
+                'Karakoram International University\nBSCS in Computer Science (2023–2027)',
+                style: TextStyle(fontSize: isTablet ? 16 : 14),
+              ),
             ),
           ),
-          const SizedBox(height: 12),
-          Text('Experience', style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(height: 8),
-          const Text(
-              '• DevOps Engineer – Core Elite Experts (2022–Present)\nDesign and implement robust DevOps solutions, automating CI/CD pipelines and AWS deployments.\n\n• Web Developer (2021–2022)\nDeveloped responsive, user-focused websites ensuring scalability and performance.'),
           const SizedBox(height: 16),
-          Text('Projects', style: Theme.of(context).textTheme.titleLarge),
+          Text('Skills',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
-          const Text(
-              '🔹 Containerized Application Deployment & CI/CD Automation\n🔹 Docker Networking & Service Integration\n🔹 Dockerized App with Nginx Reverse Proxy & Domain Routing\n\nEach project highlights problem-solving in automation, networking, and scalable delivery.'),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: user.skills
+                .map((s) => Chip(
+                      label: Text(s),
+                      padding: const EdgeInsets.all(6),
+                    ))
+                .toList(),
+          ),
           const SizedBox(height: 16),
-          Text('Skills', style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(height: 8),
-          Wrap(spacing: 8, runSpacing: 8, children: skills.map((s) => Chip(label: Text(s))).toList()),
-          const SizedBox(height: 16),
-          Text('Hobbies', style: Theme.of(context).textTheme.titleLarge),
+          Text('Hobbies',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: hobbies
+            children: user.hobbies
                 .map((h) => Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4.0),
+                      padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Row(
                         children: [
                           const Icon(Icons.check_circle_outline, size: 18),
                           const SizedBox(width: 8),
-                          Expanded(child: Text(h)),
+                          Expanded(
+                            child: Text(h,
+                                style: TextStyle(
+                                    fontSize: isTablet ? 16 : 14)),
+                          ),
                         ],
                       ),
                     ))
